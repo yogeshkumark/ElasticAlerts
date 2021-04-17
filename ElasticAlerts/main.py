@@ -1,4 +1,10 @@
 #!/usr/bin/python
+# This script is to create alerts using Elasticsearch data via python script and configuration yml file 
+#   The script will execute in service mode  
+#   The configuration file will have all the information related to following 
+#         -  Elasticsearch server details 
+#         -  List of alerts and its comments 
+#         -  SMTP protocol 
 
 import smtplib, time, logging, os
 import yaml, json, requests, urllib3
@@ -24,6 +30,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 file = open('/opt/ElasticAlerts/ElaticAlerts/config/test.yml','r')
 cfg = yaml.load(file, Loader=yaml.FullLoader)
     
+    
+#Below function is to     
 #def alertQuery(index_pattern,time_period,frequency, query):
 def alertQuery(index_pattern, field, term,time_period, negate) :
     
