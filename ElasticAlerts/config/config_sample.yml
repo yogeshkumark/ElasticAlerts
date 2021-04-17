@@ -28,3 +28,5 @@ alerts:
     frequency: ""
     query: ""
      
+#SMTP Protocol information should be given below. like 
+#server , port , username, password 
