@@ -26,8 +26,18 @@ alerts:
     field: "status"
     term: "OutOfService"
     negate: false
-    recipient: "pbrown@dccllc.net"
-
+    recipient: "test1@sample.net"
+    
+ - name: "TEST SERVER "
+    index_pattern: "logstash-monitoring-*"
+    # The interval for checks in seconds, minutes, hours, or days (i.e.: 1s, 1m, 1h, 1d)
+    time_period: "5m"
+    frequency: ""
+    field: "status"
+    term: "OutOfService"
+    negate: false
+    recipient: "raman_sample_@test.net"
+    
   - name: "911 Call"
     index_pattern: "packetbeat-*"
     # The interval for checks in seconds, minutes, hours, or days (i.e.: 1s, 1m, 1h, 1d)
@@ -36,7 +46,7 @@ alerts:
     field: "tags"
     term: "cusotmerfilter"
     negate: false
-    recipient: "pbrown@dccllc.net"
+    recipient: "ramesh@sample.net"
         
 output:
    smtp:
